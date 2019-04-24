@@ -8,7 +8,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.app-frame {
+  margin: 5%;
+  padding: 30px;
+  width: calc(80vw);
+  background: #939393;
+}
+
+.customers-actions {
+  background: #aaa;
+  padding: 10px;
+  margin: 1px;
+}
+
+.customers-actions button {
+  background: #fff;
+  min-width: 100px;
+  height: 30px;
+  margin: 5px;
+}
+
+.customers-list-item {
+  width: 160px;
+  margin: 1px;
+  padding: 4px;
+  background: #eee;
+  display: inline-block;
 }
