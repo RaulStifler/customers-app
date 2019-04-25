@@ -7,8 +7,8 @@ const CustomersList = ({
   urlPath,
 }) => (
   <div className="customers-list">
-    {
-      customers.map(customer => (
+    { !customers.isFetching
+      && customers.data.map(customer => (
         <CustomersListItem
           key={customer.dni}
           name={customer.name}
@@ -19,11 +19,19 @@ const CustomersList = ({
         />
       ))
     }
+    {
+      customers.isFetching
+      && <h4>Loading...</h4>
+    }
   </div>
 );
 
 CustomersList.propTypes = {
-  customers: PropTypes.array.isRequired,
+  customers: PropTypes.shape({
+    data: PropTypes.array.isRequired,
+    isFetching: PropTypes.bool.isRequired,
+    error: PropTypes.string,
+  }).isRequired,
   urlPath: PropTypes.string.isRequired,
 };
 
