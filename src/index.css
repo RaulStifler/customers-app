@@ -28,7 +28,7 @@ body {
   margin: 5px;
 }
 
-.customers-list-item {
+.customers-list-item .field{
   width: 160px;
   margin: 1px;
   padding: 4px;

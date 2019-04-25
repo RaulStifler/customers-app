@@ -3,16 +3,19 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import HomeContainer from './containers/HomeContainer';
 import CustomerContainer from './containers/CustomerContainer';
+import CustomersContainer from './containers/CustomersContainer';
 
-function App() {
-  return (
-    <Router>
+const App = () => (
+  <Router>
+    <React.Fragment>
+      <Route exact path="/" component={HomeContainer} />
+      <Route exact path="/customers" component={CustomersContainer} />
       <Switch>
-        <Route exact path="/" component={HomeContainer} />
-        <Route exact path="/customers" component={CustomerContainer} />
+        <Route path="/customers/new" component={CustomerContainer} />
+        <Route path="/customers/:dni" render={({ match }) => <CustomerContainer dni={match.params.dni} />} />
       </Switch>
-    </Router>
-  );
-}
+    </React.Fragment>
+  </Router>
+);
 
 export default App;

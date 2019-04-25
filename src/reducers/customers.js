@@ -7,7 +7,7 @@ const customersReducer = (state = {
 }, action) => {
   switch (action.type) {
     case FETCH_CURSTOMERS:
-      return { ...state, isFetching: true };
+      return { ...state, isFetching: true, error: null };
     case SET_CURSTOMERS:
       return { ...state, data: action.customers, isFetching: false };
     case ERROR_CURSTOMERS:

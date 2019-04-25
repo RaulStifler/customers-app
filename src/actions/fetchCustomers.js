@@ -29,7 +29,7 @@ export const requestCustomers = () => (dispatch) => {
     },
   ).catch(
     (error) => {
-      dispatch(errorCustomers(error));
+      dispatch(errorCustomers(String(error)));
     },
   );
 };

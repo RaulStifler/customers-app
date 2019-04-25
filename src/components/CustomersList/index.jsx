@@ -23,6 +23,15 @@ const CustomersList = ({
       customers.isFetching
       && <h4>Loading...</h4>
     }
+    {
+      customers.error
+      && (
+        <div>
+          <h4>Ocurrio un error:</h4>
+          <span>{customers.error}</span>
+        </div>
+      )
+    }
   </div>
 );
 
