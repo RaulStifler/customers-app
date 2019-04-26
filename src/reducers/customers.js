@@ -1,4 +1,4 @@
-import { FETCH_CURSTOMERS, SET_CURSTOMERS, ERROR_CURSTOMERS } from '../actions/fetchCustomers';
+import { FETCH_CUSTOMERS, SET_CUSTOMERS, ERROR_CUSTOMERS } from '../actions/constants';
 
 const customersReducer = (state = {
   data: [],
@@ -6,11 +6,11 @@ const customersReducer = (state = {
   error: null,
 }, action) => {
   switch (action.type) {
-    case FETCH_CURSTOMERS:
+    case FETCH_CUSTOMERS:
       return { ...state, isFetching: true, error: null };
-    case SET_CURSTOMERS:
+    case SET_CUSTOMERS:
       return { ...state, data: action.customers, isFetching: false };
-    case ERROR_CURSTOMERS:
+    case ERROR_CUSTOMERS:
       return { ...state, isFetching: false, error: action.error };
     default:
       return state;

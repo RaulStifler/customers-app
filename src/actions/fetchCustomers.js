@@ -1,27 +1,23 @@
-export const FETCH_CURSTOMERS = 'FETCH_CURSTOMERS';
-export const SET_CURSTOMERS = 'SET_CURSTOMERS';
-export const ERROR_CURSTOMERS = 'ERROR_CURSTOMERS';
-
-const url = 'http://localhost:3001/customers';
-
+import { FETCH_CUSTOMERS, SET_CUSTOMERS, ERROR_CUSTOMERS } from './constants';
+import GLOBAL from './config';
 
 export const fetchCustomers = () => ({
-  type: FETCH_CURSTOMERS,
+  type: FETCH_CUSTOMERS,
 });
 
 export const setCustomers = customers => ({
-  type: SET_CURSTOMERS,
+  type: SET_CUSTOMERS,
   customers,
 });
 
 export const errorCustomers = error => ({
-  type: ERROR_CURSTOMERS,
+  type: ERROR_CUSTOMERS,
   error,
 });
 
 export const requestCustomers = () => (dispatch) => {
   dispatch(fetchCustomers());
-  return fetch(url).then(
+  return fetch(GLOBAL.url).then(
     response => response.json(),
   ).then(
     (json) => {
